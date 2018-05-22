@@ -1,0 +1,25 @@
+const assert = require("assert");
+const {it} = require("..");
+
+it("function is patched", () => {
+  assert.notEqual(it, global.it);
+});
+
+it("skip me", t => {
+  t.skip();
+  assert(false);
+});
+
+it("timeout", t => {
+  t.timeout(5000);
+  return new Promise(resolve => {
+    setTimeout(resolve, 2500);
+  });
+});
+
+it("pending test");
+
+it("done callback", (t, done) => {
+  t.timeout(5000);
+  setTimeout(done, 2500);
+});

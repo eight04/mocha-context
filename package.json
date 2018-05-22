@@ -1,0 +1,26 @@
+{
+  "name": "mocha-context",
+  "version": "0.0.0",
+  "description": "Pass this context as the first argument.",
+  "author": "eight04 <eight04@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint **/*.js --ignore-pattern coverage --cache",
+    "mocha": "mocha test/test.js && mocha test/test-register.js",
+    "nyc": "nyc --reporter=html npm run mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "npm run lint && npm run nyc",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags && npm publish"
+  },
+  "main": "index.js",
+  "files": [],
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "^3.0.1",
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0",
+    "nyc": "^11.8.0"
+  },
+  "repository": "eight04/mocha-context"
+}
