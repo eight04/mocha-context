@@ -1,6 +1,6 @@
 {
   "name": "mocha-context",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Pass `this` context as the first argument of the arrow function.",
   "author": "eight04 <eight04@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,9 @@
     "postversion": "git push --follow-tags && npm publish"
   },
   "main": "index.js",
-  "files": ["register.js"],
+  "files": [
+    "register.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "coveralls": "^3.0.1",
