@@ -14,7 +14,7 @@
     "postversion": "git push --follow-tags && npm publish"
   },
   "main": "index.js",
-  "files": [],
+  "files": ["register.js"],
   "dependencies": {},
   "devDependencies": {
     "coveralls": "^3.0.1",
