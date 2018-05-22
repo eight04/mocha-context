@@ -78,6 +78,10 @@ Similar projects
 Changelog
 ---------
 
+* 0.1.1 (May 23, 2018)
+
+  - Fix: register hook.
+
 * 0.1.0 (May 22, 2018)
 
   - First release.
