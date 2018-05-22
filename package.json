@@ -1,7 +1,7 @@
 {
   "name": "mocha-context",
   "version": "0.0.0",
-  "description": "Pass this context as the first argument.",
+  "description": "Pass `this` context as the first argument of the arrow function.",
   "author": "eight04 <eight04@gmail.com>",
   "license": "MIT",
   "scripts": {

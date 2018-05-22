@@ -1,7 +1,7 @@
 mocha-context
 =============
 
-Pass `this` context as the first argument.
+Pass `this` context as the first argument of the arrow function.
 
 Installation
 ------------
