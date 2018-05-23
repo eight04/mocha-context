@@ -1,6 +1,9 @@
 mocha-context
 =============
 
+[![Build Status](https://travis-ci.org/eight04/mocha-context.svg?branch=master)](https://travis-ci.org/eight04/mocha-context)
+[![Coverage Status](https://coveralls.io/repos/github/eight04/mocha-context/badge.svg?branch=master)](https://coveralls.io/github/eight04/mocha-context?branch=master)
+
 Pass `this` context as the first argument of the arrow function.
 
 Installation
