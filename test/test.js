@@ -1,10 +1,6 @@
 const assert = require("assert");
 const {it} = require("..");
 
-it("function is patched", () => {
-  assert.notEqual(it, global.it);
-});
-
 it("skip me", t => {
   t.skip();
   assert(false);
