@@ -7,7 +7,7 @@ function inject(_global) {
   }
 }
 
-function hook() {
+function install() {
   // hook into mocha...
   // FIXME: is there a better way to achieve this?
   const Mocha = require("mocha");
@@ -29,7 +29,7 @@ Object.defineProperty(module, "exports", {
     if (_global.describe) {
       inject(_global);
     } else {
-      hook();
+      install();
     }
   }
 });
