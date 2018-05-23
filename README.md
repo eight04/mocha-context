@@ -78,6 +78,10 @@ Similar projects
 Changelog
 ---------
 
+* 0.1.2 (May 23, 2018)
+
+  - Fix: register hook doesn't work with multiple test files.
+
 * 0.1.1 (May 23, 2018)
 
   - Fix: register hook.
