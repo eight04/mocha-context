@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint **/*.js --ignore-pattern coverage --cache",
-    "mocha": "mocha test/test.js && mocha test/test-register.js && mocha test/test-register-hook.js -r ./register",
+    "mocha": "mocha test/test.js && npm run mocha-register && npm run mocha-require",
+    "mocha-register": "mocha test/test-register*.js",
+    "mocha-require": "mocha test/test-require*.js -r ./register",
     "nyc": "nyc --reporter=html npm run mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "npm run lint && npm run nyc",
