@@ -82,6 +82,10 @@ Similar projects
 Changelog
 ---------
 
+* 0.1.4 (May 24, 2018)
+
+  - Fix: reference error when `global` doesn't exist.
+
 * 0.1.3 (May 24, 2018)
 
   - Fix: support `xxx.only`, `xxx.skip`.
