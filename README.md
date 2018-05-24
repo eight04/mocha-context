@@ -81,6 +81,11 @@ Similar projects
 Changelog
 ---------
 
+* 0.1.3 (May 24, 2018)
+
+  - Fix: support `xxx.only`, `xxx.skip`.
+  - Fix: hooks (`before`, `beforeEach`, etc) have different signature.
+
 * 0.1.2 (May 23, 2018)
 
   - Fix: register hook doesn't work with multiple test files.
