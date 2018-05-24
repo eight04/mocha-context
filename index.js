@@ -35,7 +35,5 @@ function decorate(func) {
   if (func.only) {
     patchedFunc.only = patchFunction(func.only);
   }
-  // not sure if this is required but arrow-mocha includes it.
-  patchedFunc.toString = () => func.toString();
   return patchedFunc;
 }
