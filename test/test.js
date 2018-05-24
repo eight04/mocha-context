@@ -14,7 +14,7 @@ it("timeout", t => {
   });
 });
 
-it("pending test");
+it("no runner");
 
 it("done callback", (t, done) => {
   t.timeout(5000);
@@ -22,17 +22,12 @@ it("done callback", (t, done) => {
 });
 
 // this is the original xit.
-xit("pending test", t => {
-  t.skip();
+xit("xit", t => {
+  t.timeout(0);
   assert(false);
 });
 
-it.skip("pending test", t => {
-  t.skip();
-  assert(false);
-});
-
-it.only("run me", t => {
-  t.skip();
+it.skip("it.skip", t => {
+  t.timeout(0);
   assert(false);
 });
