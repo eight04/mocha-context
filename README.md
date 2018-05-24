@@ -3,6 +3,7 @@ mocha-context
 
 [![Build Status](https://travis-ci.org/eight04/mocha-context.svg?branch=master)](https://travis-ci.org/eight04/mocha-context)
 [![Coverage Status](https://coveralls.io/repos/github/eight04/mocha-context/badge.svg?branch=master)](https://coveralls.io/github/eight04/mocha-context?branch=master)
+[![install size](https://packagephobia.now.sh/badge?p=mocha-context)](https://packagephobia.now.sh/result?p=mocha-context)
 
 Pass `this` context as the first argument of the arrow function.
 
