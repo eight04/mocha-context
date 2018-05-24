@@ -82,6 +82,10 @@ Similar projects
 Changelog
 ---------
 
+* 0.1.5 (May 24, 2018)
+
+  - Fix: `lib` is not included in the dist.
+
 * 0.1.4 (May 24, 2018)
 
   - Fix: reference error when `global` doesn't exist.
