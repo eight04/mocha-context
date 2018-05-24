@@ -1,4 +1,4 @@
-const _global = typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : window;
+const _global = require("./lib/global");
 
 function inject(_global) {
   const mochaContext = require(".");

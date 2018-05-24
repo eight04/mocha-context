@@ -1,8 +1,8 @@
+const _global = require("./lib/global");
 const METHODS = [
   "after", "afterEach", "before", "beforeEach",
   "describe", "it", "context", "specify"
 ];
-const _global = typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : window;
 
 for (const name of METHODS) {
   exports[name] = decorate(_global[name]);
