@@ -1,23 +1,15 @@
 const METHODS = [
-  {
-    names: ["after", "afterEach", "before", "beforeEach"],
-    decorate: decorateHook
-  },
-  {
-    names: ["describe", "it"],
-    decorate: decorateTest
-  }
+  "after", "afterEach", "before", "beforeEach",
+  "describe", "it", "context", "specify"
 ];
 const _global = global || self;
 
-for (const {names, decorate} of METHODS) {
-  for (const name of names) {
-    exports[name] = decorate(_global[name]);
-  }
+for (const name of METHODS) {
+  exports[name] = decorate(_global[name]);
 }
 
-function contextify(fn, hasDone) {
-  if (hasDone) {
+function contextify(fn) {
+  if (fn.length >= 2) {
     return function(done) {
       return fn(this, done);
     };
@@ -27,38 +19,23 @@ function contextify(fn, hasDone) {
   };
 }
 
-function patchTest(func) {
-  return (message, runner) => {
-    // pending test
-    if (!runner) {
-      return func(message);
-    }
-    // done
-    if (runner.length >= 2) {
-      return func(message, contextify(runner, true));
-    }
-    // normal
-    return func(message, contextify(runner));
+function patchFunction(func) {
+  return (...args) => {
+    args = args.map(a => typeof a === "function" ? contextify(a) : a);
+    return func(...args);
   };
 }
 
-function patchHook(func) {
-  return runner => {
-    if (runner.length >= 2) {
-      return func(contextify(runner, true));
-    }
-    return func(contextify(runner));
-  };
-}
-
-function decorateHook(func) {
-  return patchHook(func);
-}
-
-function decorateTest(func) {
-  const patchedFunc = patchTest(func);
-  // no need to patch .skip
-  patchedFunc.skip = func.skip;
-  patchedFunc.only = patchTest(func.only);
+function decorate(func) {
+  const patchedFunc = patchFunction(func);
+  if (func.skip) {
+    // no need to patch .skip
+    patchedFunc.skip = func.skip;
+  }
+  if (func.only) {
+    patchedFunc.only = patchFunction(func.only);
+  }
+  // not sure if this is required but arrow-mocha includes it.
+  patchedFunc.toString = () => func.toString();
   return patchedFunc;
 }

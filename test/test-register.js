@@ -2,7 +2,6 @@
 const assert = require("assert");
 require("../register");
 
-it("skip me", t => {
-  t.skip();
-  assert(false);
+it("has context", t => {
+  assert(typeof t.timeout, "function");
 });

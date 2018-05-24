@@ -1,7 +1,6 @@
 /* eslint-env mocha */
 const assert = require("assert");
 
-it("skip me", t => {
-  t.skip();
-  assert(false);
+it("has context", t => {
+  assert.equal(typeof t.timeout, "function");
 });

@@ -1,11 +1,13 @@
+/* eslint-env mocha */
 const assert = require("assert");
 const {it} = require("..");
 
-it.only("run me", t => {
-  t.skip(5000);
-  assert(false);
-});
+describe("patched it with only", () => {
+  it("don't run", () => {
+    assert(false);
+  });
 
-it("don't run", () => {
-  assert(false);
+  it.only("run me", t => {
+    assert.equal(typeof t.timeout, "function");
+  });
 });
