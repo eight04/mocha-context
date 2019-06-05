@@ -22,9 +22,9 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^5.16.0",
-    "mocha": "^5.2.0",
+    "mocha": "^6.1.4",
     "nyc": "^14.1.1",
-    "sinon": "^5.0.8"
+    "sinon": "^7.3.2"
   },
   "repository": "eight04/mocha-context"
 }
