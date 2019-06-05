@@ -25,7 +25,7 @@ function install() {
 }
 
 Object.defineProperty(module, "exports", {
-  get() {
+  get() { // eslint-disable-line getter-return
     if (_global.describe) {
       inject(_global);
     } else {
