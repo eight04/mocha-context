@@ -10,7 +10,6 @@
     "mocha-register": "mocha test/test-register*.js",
     "mocha-require": "mocha test/test-require*.js -r ./register",
     "nyc": "nyc --reporter=html npm run mocha",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "test": "npm run lint && npm run nyc",
     "preversion": "npm test",
     "postversion": "git push --follow-tags && npm publish"
@@ -22,7 +21,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "coveralls": "^3.0.1",
     "eslint": "^5.16.0",
     "mocha": "^5.2.0",
     "nyc": "^14.1.1",
